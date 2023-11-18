@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Detalle de la Sucursal</h2>
+    <p><strong>Nombre:</strong> {{ sucursal.nombre }}</p>
+    <p><strong>Dirección:</strong> {{ sucursal.direccion }}</p>
+    <p><strong>Fecha de Apertura:</strong> {{ sucursal.apertura }}</p>
+    <p><strong>Gerente:</strong> {{ sucursal.gerente }}</p>
+    <p><strong>Teléfono:</strong> {{ sucursal.fono }}</p>
+    <p><strong>Correo Electrónico:</strong> {{ sucursal.correo }}</p>
+
+  <a href="{% url 'editar_sucursal' sucursal.pk %}">Editar</a> |
+  <a href="{% url 'eliminar_sucursal' sucursal.pk %}">Eliminar</a> |
+  <a href="{% url 'lista_sucursal' %}">Volver a la lista</a>
+{% endblock %}
