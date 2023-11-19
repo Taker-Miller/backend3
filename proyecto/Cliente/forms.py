@@ -37,11 +37,9 @@ class ClienteForm(forms.ModelForm):
         if fecha_de_nacimiento > hoy:
             raise ValidationError('La fecha de nacimiento no puede ser en el futuro.')
 
-        # Calcular la edad
         edad = hoy.year - fecha_de_nacimiento.year - ((hoy.month, hoy.day) < (fecha_de_nacimiento.month, fecha_de_nacimiento.day))
         if edad < 18:
             raise ValidationError('Debes tener al menos 18 años para registrarte.')
-
         return fecha_de_nacimiento
 
     def clean_saldo(self):
